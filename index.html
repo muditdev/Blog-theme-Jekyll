@@ -2,7 +2,7 @@
 layout: mwh
 title: Mudit Jain | designer, developer, thinker
 ---
-<header class="main-header" ng-class="{subpg : !isHome, postpgHeader : (currPage == 'post') }" ng-if="currPage != 'post'">
+<header class="main-header subpg" ng-class="{subpg : !isHome, postpgHeader : (currPage == 'post') }" ng-if="currPage != 'post'">
 
   <div class="top-header ng-scope"><!--top header starts -->
     <div class="branding">
@@ -14,11 +14,10 @@ title: Mudit Jain | designer, developer, thinker
     </div>
     <nav role="navigation" class="main-nav">
       <ul id="navItems">
-        <li><a href="/">home</a></li>
-        <li><a href="/services">services</a></li>
-        <li><a href="/projects">projects</a></li>
-        <li><a href="/blogs">blog</a></li>
-        <!-- <li><a href="">shop</a></li> -->
+        <li><a href="//makewebhappy.com/">home</a></li>
+        <li><a href="//makewebhappy.com/services">services</a></li>
+        <li><a href="//makewebhappy.com/projects">projects</a></li>
+        <li><a href="//makewebhappy.com/blogs">blog</a></li>
       </ul>
 
       <div class="mobo-menu">
@@ -33,36 +32,69 @@ title: Mudit Jain | designer, developer, thinker
     </nav>
   </div>
 
-  <section class="home-intro" data-ng-if="isHome"><!--home intro starts -->
-    <div class="intro-wrap">
-      <figure class="myAvtar">
-        <img src="{{site.baseurl}}assets/svg/myavtar.svg" alt="" />
-      </figure>
-      <div class="intro-content">
-        <h1 class="title">making web happy</h1>
-        <h2 class="sub-title">user interaction engineer </h2>
-        <p class="bio">
-          Hello there, i am Front-end developer and a weird guy who likes making weird things with web technologies. <br>
-          I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
-        </p>
-
-        <a class="btn btn--icon-1" href="https://in.linkedin.com/in/muditjain1996" target="_blank">
-          <span class="Ico-profile icon">
-           <svg>
-             <use xlink:href="{{site.baseurl}}assets/svg/sprite.svg#profileIco" />
-           </svg>
-          </span>
-          view profile</a>
-      </div>
-    </div>
-  </section><!--home intro ends -->
 </header>
 
 
 <main class="main-content">
-  <!-- main view -->
-  <div ng-view ></div>
-  <!-- main view -->
+  <header class="blog-header ng-scope">
+
+    <figure class="me-writer">
+      <span class="writerBG">
+        <svg>
+          <use xlink:href="/assets/svg/sprite.svg#writerbg"></use>
+        </svg>
+      </span>
+
+      <img src="assets/svg/writer-me.svg" alt="">
+    </figure>
+
+    <div class="bh-content">
+        <h1>As a Writer.</h1>
+        <h2>We love to spread the knowledge!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+    </div>
+
+  </header>
+
+
+
+<section class="blogPosts-container">
+  {% for post in site.posts %}
+  <article class="blogPost">
+    <div class="post-meta">
+      <span class="date">{{post.date}}</span>
+      <span class="dot"></span>
+      <a class="categories">{{post.categories}}</a>
+    </div>
+
+    <div class="post-content">
+      <h1 class="post-title">{{post.title}}</h1>
+      <div class="post-excerpt" >{{post.excerpt}}</div>
+    </div>
+
+    <div class="post-actions">
+      <!-- href="{(post.url)}" -->
+      <a class="read" href="{{ post.url | prepend: site.baseurl }}">
+        <span class="Ico-read">
+          <svg>
+            <use xlink:href="/assets/svg/sprite.svg#readIco" />
+          </svg>
+        </span>
+      </a>
+
+      <a class="love">
+        <span class="Ico-love">
+          <svg>
+            <use xlink:href="/assets/svg/sprite.svg#loveIco" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </article>
+  {% endfor %}
+
+</section>
+
 </main>
 
 <!-- newsletter -->

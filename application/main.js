@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    showLoader();
+    // showLoader();
     nlInput();
     blocksBg();
     // setting background over scroll
