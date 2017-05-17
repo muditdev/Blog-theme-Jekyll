@@ -62,7 +62,7 @@ title: Mudit Jain | designer, developer, thinker
   {% for post in site.posts %}
   <article class="blogPost">
     <div class="post-meta">
-      <span class="date">{{post.date}}</span>
+      <span class="date">{{post.date | date_to_long_string}}</span>
       <span class="dot"></span>
       <a class="categories">{{post.categories}}</a>
     </div>

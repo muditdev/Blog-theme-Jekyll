@@ -4,7 +4,7 @@ title:  "How to setup development environment for jekyll with browser sync"
 date:   2016-04-20 09:11:03
 categories: Work
 postUrl: jekyll-with-gulp
-bannerImg: mudit.jpg
+bannerImg: jekyllwithgulp.jpg
 comments: true
 ---
 
