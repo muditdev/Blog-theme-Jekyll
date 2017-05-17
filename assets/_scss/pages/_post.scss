@@ -72,6 +72,7 @@ header.main-header.postpgHeader{
 		font-size: 1.125em;
 		line-height: 1.5;
 		@include box-shadow(7px 8px 20px 0px rgba(0, 0, 0, 0.25));
+		word-wrap: break-word;
 		a{
 			color: $yellow;
 		}

@@ -4309,7 +4309,8 @@ article.post-content blockquote {
   line-height: 1.5;
   -webkit-box-shadow: 7px 8px 20px 0px rgba(0, 0, 0, 0.25);
   -ms-box-shadow: 7px 8px 20px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 7px 8px 20px 0px rgba(0, 0, 0, 0.25); }
+  box-shadow: 7px 8px 20px 0px rgba(0, 0, 0, 0.25);
+  word-wrap: break-word; }
   article.post-content blockquote a {
     color: #d8cf00; }
   article.post-content blockquote:before {
