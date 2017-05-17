@@ -48,9 +48,10 @@ layout: compress
 
         </div>
       </div>
-      <header class="main-header postpgHeader">
+      <header class="main-header postpgHeader" style="background-image:url(/assets/images/blog_banners/{{page.bannerImg}})">
         {% include topHeader.html %}
         <div class="postHead">
+          
           <span class="post-cat">{{page.categories}}</span>
           <h1 class="post-title">{{page.title}}</h1>
           <span class="post-date">{{page.shortdate}}</span>

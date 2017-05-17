@@ -4230,7 +4230,7 @@ header.blog-header {
           fill: #d65a49; }
 
 header.main-header.postpgHeader {
-  background: #fff url(../images/the-new-mw.jpg) center center;
+  background: #fffcb6 center center;
   min-height: 600px;
   background-size: cover;
   position: relative; }

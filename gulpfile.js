@@ -64,26 +64,26 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
 //
 // })
 
-gulp.task('js', function() {
-    var source = [
-      'application/app.js',
-      'application/config.js',
-      'application/services/*.js',
-      'application/controllers/*.js'
-    ];
-    return gulp.src(source)
-        .pipe(sourcemaps.init())
-        .pipe(concat('application/application.js', {newLine: ';'}))
-        // Annotate before uglify so the code get's min'd properly.
-        .pipe(ngAnnotate({
-            // true helps add where @ngInject is not used. It infers.
-            // Doesn't work with resolve, so we must be explicit there
-            add: true
-        }))
-        .pipe(uglify({mangle: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('.'));
-});
+// gulp.task('js', function() {
+//     var source = [
+//       'application/app.js',
+//       'application/config.js',
+//       'application/services/*.js',
+//       'application/controllers/*.js'
+//     ];
+//     return gulp.src(source)
+//         .pipe(sourcemaps.init())
+//         .pipe(concat('application/application.js', {newLine: ';'}))
+//         // Annotate before uglify so the code get's min'd properly.
+//         .pipe(ngAnnotate({
+//             // true helps add where @ngInject is not used. It infers.
+//             // Doesn't work with resolve, so we must be explicit there
+//             add: true
+//         }))
+//         .pipe(uglify({mangle: true}))
+//         .pipe(sourcemaps.write('./'))
+//         .pipe(gulp.dest('.'));
+// });
 
 
 /**
@@ -107,19 +107,12 @@ gulp.task('sass', function () {
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-gulp.task('watch', ['js'], function () {
+gulp.task('watch', function () {
     gulp.watch('assets/_scss/**/*.*', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html','views/*.html', 'views/projects/*.html','_includes/*.html','_posts/*', 'views/includes/*.html'], ['jekyll-rebuild']);
-    //js files
-    gulp.watch(['application/app.js','application/services/*.js', 'application/controllers/*.js'] , ['js']);
-    gulp.watch('application/*.js', ['jekyll-rebuild']);
-    // gulp.watch('application/**/*.js', ['jekyll-rebuild']);
-    // svgs
-    gulp.watch('assets/svg/sprite.svg', ['jekyll-rebuild']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['watch']);
