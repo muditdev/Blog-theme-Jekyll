@@ -46,15 +46,20 @@ header.main-header.postpgHeader{
  }
 
  article.post-content{
+	 font-family: $font-mont;
 	p{
 		margin-bottom: 15px;
 		line-height: 1.5;
-		letter-spacing: .5px;
-		font-size: 1.1em;
+		letter-spacing: .125px;
 		font-weight: 400;
+		color: $gray;
+	}
+	h2{
+		font-family: $primary-font;
 	}
 	a{
-		font-weight: 600;
+		// font-weight: 500;
+		font-style: italic;
 	}
 	img{
 		max-width: 100%;
@@ -98,5 +103,10 @@ header.main-header.postpgHeader{
 			position: absolute;
 			@include transform(translate(50%, 65%) rotate(180deg));
 		}
+		
+	}
+	@include media($mobile-l) {
+		font-size: .857em;
+		p{font-weight: 300}
 	}
  }

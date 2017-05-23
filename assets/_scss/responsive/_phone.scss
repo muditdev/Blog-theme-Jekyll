@@ -10,7 +10,7 @@
   main.main-content{
     // margin-top: 100px;
   }
-
+ 
   .products{
     padding: 0 10px;
     // .product {
@@ -19,6 +19,14 @@
     //   }
     // }
   }
+
+// blog main page index 
+.blogPosts-container .blogPost{
+  margin: 10px;
+}
+.blogPosts-container .blogPost .post-content h1.post-title{
+  font-size: 1.5em;
+}
 
 }//media ends
 

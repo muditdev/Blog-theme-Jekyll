@@ -8,6 +8,7 @@ bannerImg: jekyllwithgulp.jpg
 comments: true
 ---
 
+
 Hello there,<br />
 I am Mudit, front-end- developer and designer. This is my first Article About Jekyll in Medium. Jekyll is a Simple static site generator platform based on ruby. You can learn more here : jekyllrb.com.
 
